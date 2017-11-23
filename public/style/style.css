@@ -238,7 +238,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   text-align: left;
 }
   
-.form_settings input, .form_settings textarea
+.form_settings input, .form_settings
 { padding: 5px; 
   width: 160px; 
   font: 100% arial; 
@@ -259,9 +259,13 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   float: right;
 }
 
+.hide{
+  display:none;  
+}
+
 .form_settings textarea, .form_settings select
 { font: 100% arial; 
-  width: 299px;}
+  width: 1000px;}
 
 .form_settings select
 { width: 310px;}

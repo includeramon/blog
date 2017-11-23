@@ -22,8 +22,9 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="<?php echo base_url()?>login">Login</a></li>
+          <li class="selected"><a href="<?php echo base_url();?>">Home</a></li>
+          <li><a href="<?php if(isset($_SESSION['userid'])) echo base_url().'users'; else echo base_url().'login'; ?>"><?php if(isset($_SESSION['userid'])) echo $_SESSION['username']; else echo 'Login'?></a></li>
+          <li <?php if(!isset($_SESSION['userid'])) echo 'style="display:none;"';?>><a href="<?php echo base_url().'login/out';?>">Logout</a></li>
         </ul>
       </div>
     </div>

@@ -9,6 +9,7 @@ class Login extends CI_Controller {
 		$this->load->helper('url_helper');
 		$this->load->helper('url');
 		$this->load->model('users_model');
+		// $this->load->library('session');
 	}
 
 	public function index()
@@ -66,16 +67,36 @@ class Login extends CI_Controller {
 
 		$user = $service->userinfo->get(); //get user info 
 
+		
 		$data = array(
-			'USER_ID' => $user->id,
-			'USER_NAME' => $user->name,
-			'USER_GENDER' => $user->gender,
-			'USER_EMAIL' => $user->email,
-			'USER_LINK' => $user->link
+			'userid' => $user->id,
+		 	'username' => $user->name,
+		 	'usergender' => $user->gender,
+			'useremail' => $user->email,
+			'userlink' => $user->link
 		);
-			//Transfering data to Model
-		$this->users_model->new_user($data);
-		$page_info['username'] = $user->name;
-		$this->load->view('user-page',$page_info);
+
+		//persist
+		// $this->users_model->new_user($data);
+
+		//dont know why, but sessions does not work with underscores :(
+		$session_data = array(
+			'userid' => $user->id,
+		 	'username' => $user->name,
+		 	'usergender' => $user->gender,
+			'useremail' => $user->email,
+			'userlink' => $user->link
+		);
+
+		 $this->session->set_userdata($session_data);
+
+		// echo 'val is ' . $this->session->userdata('userid');
+		 redirect(base_url().'users');
+	}
+
+	public function out()
+	{
+		session_destroy();
+		redirect('blog');
 	}
 }
