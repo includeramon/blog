@@ -6,7 +6,7 @@
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/style/style.css" title="style" />
 </head>
 
 <body>
@@ -22,25 +22,19 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Login</a></li>
+          <li><a href="<?php echo base_url();?>">Home</a></li>
+          <li class="selected"><a href="<?php base_url();?>">Login</a></li>
         </ul>
       </div>
     </div>
     <div id="content_header"></div>
     <div id="site_content">
       <div id="content">
-        <!-- insert the page content here -->
-        <h1>Contact Us</h1>
-        <p>Below is an example of how a contact form might look with this template:</p>
-        <form action="#" method="post">
-          <div class="form_settings">
-            <p><span>Username/Email</span><input class="contact" type="text" name="your_name" value="" /></p>
-            <p><span>Password</span><input class="contact" type="password" name="your_name" value="" /></p>
-            <span><input class="submit" type="submit" name="contact_submitted" value="submit" align="" /></span>
-          </div>
-        </form>
-        
+      
+          <form action="<?php echo base_url().'/login/gin';?>">
+            <span><input class="submit" type="submit" name="contact_submitted" value="SIGN-IN USING GOOGLE" align="" /></span>
+          
+          </form>
       </div>
     </div>
     <div id="content_footer"></div>
