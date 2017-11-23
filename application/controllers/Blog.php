@@ -26,9 +26,7 @@ class Blog extends CI_Controller {
 
 	public function edit_post($id)
 	{
-		// $text = 'Hello **Parsedown**!';
-		// $result = Parsedown::instance()->parse($text);
-		// echo $result;
+	
 		$data['id'] = $id;
 		$this->load->view('edit',$data);
 	}

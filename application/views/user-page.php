@@ -32,7 +32,7 @@
     <div id="site_content">
       <div id="content">
       <?php foreach($posts as $post_item):?>      
-        <h2><?php echo $post_item['POSTS_TITLE']?></h2>
+        <h2><?php echo Parsedown::instance()->parse($post_item['POSTS_TITLE'])?></h2>
         <p>
         <a href="<?php echo base_url().'blog/edit_post/'.$post_item['POSTS_ID'];?>">edit</a></p>
         <p>

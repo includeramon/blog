@@ -56,8 +56,8 @@
       </div> -->
       <div id="content">
 <?php foreach($posts as $post_item):?>      
-        <h2><?php echo $post_item['POSTS_TITLE']?></h2>
-        <p><?php echo $post_item['POSTS_CONTENT']?></p>
+        <h1><?php echo Parsedown::instance()->parse($post_item['POSTS_TITLE'])?></h1>
+        <p><?php echo Parsedown::instance()->parse($post_item['POSTS_CONTENT'])?></p>
         <p><a href="http://creativecommons.org/licenses/by/3.0">Read More</a></p>
         <p><h4>Author: | Ramon Damuag | May 12, 2017</h4></p>
 
@@ -70,11 +70,6 @@
           <li>Google Chrome 6</li>
           <li>Safari 4</li>
         </ul> -->
-
-        <h2>Lets talk about asdasdfish</h2>
-        <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>
-        <p><a href="http://creativecommons.org/licenses/by/3.0">Read More</a></p>
-        <p><h4>Author: | Ramon Damuag | May 12, 2017</h4></p>
       </div>
     </div>
     <div id="content_footer"></div>

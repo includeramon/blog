@@ -10,7 +10,6 @@ class Users extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('users_model');
 		$this->load->model('blog_model');
-		// $this->load->library('session');
 	}
 
 	public function index()
