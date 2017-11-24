@@ -32,15 +32,15 @@
     <div id="content_header"></div>
     <div id="site_content">
       <div id="content">
-      <?php foreach($posts as $post_item):?>      
-        <h1><?php echo Parsedown::instance()->parse($post_item['POSTS_TITLE'])?></h1>
-        <p>
-        <a href="<?php echo base_url().'blog/edit_post/'.$post_item['POSTS_ID'];?>">edit</a></p>
-        <p>
-        <a href="<?php echo base_url().'blog/delete_post/'.$post_item['POSTS_ID'];?>">delete</a></p>
-
-        <hr/>
-<?php endforeach;?>
+      
+          <form method="post" action="<?php echo base_url().'blog/create_post';?>">
+          <div class="form_settings">
+            <p><span>Title</span><input type="text" name="title" value="" /></p>
+            <p><span>Content</span><textarea rows="8" cols="1000" name="content"></textarea></p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="name" value="Create Post" /></p>
+          </div>
+          
+          </form>
       </div>
     </div>
     <div id="content_footer"></div>

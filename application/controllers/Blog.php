@@ -18,6 +18,29 @@ class Blog extends CI_Controller {
 		$this->load->view('blog', $data);
 	}
 
+	public function create_post()
+	{
+		if($this->input->post('title'))
+		{
+			$data = array(
+				'id' => $this->input->post('id'),
+				'userid' => $this->session->userdata('userid'),
+				'title' => $this->input->post('title'),
+				'content' => $this->input->post('content'),
+				'created' => date('Y-m-d H:i:s'),
+				'published' => date('Y-m-d H:i:s')
+			);
+	
+			$this->blog_model->upsert_post($data);
+			redirect('users');
+		}	
+		else
+		{
+			$this->load->view('create_post');
+		}
+		
+	}
+
 	public function delete_post($id)
 	{
 		$this->blog_model->delete_post($id);

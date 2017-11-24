@@ -10,7 +10,7 @@ class Blog_model extends CI_Model {
 
 	public function get_posts($limit = 10, $offset = 0)
 	{
-		$query_string = 'SELECT * FROM POSTS LIMIT '.$limit.' OFFSET ' .$offset;
+		$query_string = 'SELECT * FROM POSTS ORDER BY POSTS_CREATED desc LIMIT '.$limit.' OFFSET ' .$offset ;
 		$query = $this->db->query($query_string);
 		return $query->result_array();
 	}
@@ -18,7 +18,7 @@ class Blog_model extends CI_Model {
 	public function get_user_posts($id)
 	{
 		$query_string = 'SELECT * FROM POSTS ' . 
-		                 'WHERE POSTS_USER_ID='.$id ;
+		                 'WHERE POSTS_USER_ID='.$id .' ORDER BY POSTS_CREATED desc ' ;
 		$query = $this->db->query($query_string);
 		return $query->result_array();
 	}
@@ -41,10 +41,10 @@ class Blog_model extends CI_Model {
 	public function upsert_post($data)
 	{
 		
-		$check_query_string = 'SELECT * FROM POSTS ' . 
-		                 'WHERE POSTS_ID='.$data['id'] ;
+		// $check_query_string = 'SELECT * FROM POSTS ' . 
+		//                  'WHERE POSTS_ID='.$data['id'] ;
 		
-		if($this->db->query($check_query_string)->num_rows() > 0)
+		if($data['id'])
 		{
 			$query = "UPDATE POSTS SET " . 
 						"POSTS_ID='".$data['id']."'," .
@@ -56,13 +56,13 @@ class Blog_model extends CI_Model {
 		}
 		else
 		{
-			$query = 'INSERT INTO POSTS VALUES(' . 
-						$data['id']. ',' .
-						$data['userid'].',' .
-						$data['title'].',' .
-						$data['content'].',' .
-						$data['created'].',' .
-						$data['published'].') WHERE POSTS_ID='.$id;
+			$query = "INSERT INTO POSTS VALUES(" . 
+						"NULL," .
+						"'".$data['userid']."'," .
+						"'".$data['title']."'," .
+						"'".$data['content']."'," .
+						"'".$data['created']."'," .
+						"'".$data['published']."')";
 		}
 		// return $query;
 		$this->db->query($query);
