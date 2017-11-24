@@ -79,10 +79,10 @@ How to deploy:
   E.)Import the data to mysql(use BLOG.sql in the project)
     
     
-  D.)Codeigniter have problems in sessions accross redirects, this fixed my instance:
+  F.)Codeigniter have problems in sessions accross redirects, this fixed my instance:
         http://billpatrianakos.me/blog/2013/03/22/codeigniter-session-problems/
-        
+   
  Thanks!
 
-     
+  
     
