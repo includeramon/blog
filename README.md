@@ -8,7 +8,7 @@ Features:
  
 Features to do:
   - make it SPA(Single Page application)
-  - add in the edit page the renderd markdown view. Right now, it just adds directly and rendered on the user dashboard
+  - add in the edit page the renderd markdown view. Right now, it just adds directly and rendered on the user dashboard and Main page
   - improve layouts
   - Pagination on Main page
   - Pagination on Users Page
