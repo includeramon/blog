@@ -35,8 +35,8 @@
           <form method="post" action="<?php echo base_url().'blog/edit_save';?>">
           <div class="form_settings">
           <input type="hidden" name="id" value="<?php echo $id;?>" />
-            <p><span>Title</span><input type="text" name="title" value="" /></p>
-            <p><span>Content</span><textarea rows="8" cols="1000" name="content"></textarea></p>
+            <p><span>Title</span><input type="text" name="title" value="<?php echo $title;?>" /></p>
+            <p><span>Content</span><textarea rows="8" cols="1000" name="content"><?php echo $content;?></textarea></p>
             <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="name" value="button" /></p>
           </div>
           

@@ -23,6 +23,14 @@ class Blog_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function get_user_post_edit($id)
+	{
+		$query_string = 'SELECT * FROM POSTS ' . 
+		                 'WHERE POSTS_ID='.$id .' LIMIT 1' ;
+		$query = $this->db->query($query_string);
+		return $query->row();
+	}
+
 	public function delete_post($id)
 	{
 		$query_string = 'DELETE FROM POSTS ' . 

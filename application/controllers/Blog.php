@@ -27,7 +27,11 @@ class Blog extends CI_Controller {
 	public function edit_post($id)
 	{
 	
+		$result = $this->blog_model->get_user_post_edit($id);
+		// var_dump($result);
 		$data['id'] = $id;
+		$data['title'] = $result->POSTS_TITLE;
+		$data['content'] = $result->POSTS_CONTENT;
 		$this->load->view('edit',$data);
 	}
 
