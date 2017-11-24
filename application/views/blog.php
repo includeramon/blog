@@ -64,13 +64,7 @@
 
         <hr/>
 <?php endforeach;?>
-        <!-- <ul>
-          <li>Internet Explorer 8</li>
-          <li>Internet Explorer 7</li>
-          <li>FireFox 3.5</li>
-          <li>Google Chrome 6</li>
-          <li>Safari 4</li>
-        </ul> -->
+      
       </div>
     </div>
     <div id="content_footer"></div>
