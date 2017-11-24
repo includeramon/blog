@@ -72,16 +72,19 @@ How to deploy:
   D.)Configure MySQL with the following database properties:
   
         'hostname' => '192.168.56.67', //change this to what ever set in step A
-  	    'username' => 'blog-user',
+  	'username' => 'blog-user',
       	'password' => '8zsphinx',
-	      'database' => 'BLOG',
+	'database' => 'BLOG',
 	      
   E.)Import the data to mysql(use BLOG.sql in the project)
     
     
   F.)Codeigniter have problems in sessions accross redirects, this fixed my instance:
         http://billpatrianakos.me/blog/2013/03/22/codeigniter-session-problems/
-   
+  
+  However, if there is already a running Apache, Php, and mysql server instance. Part A can be skipped. And just copy all files in the web 
+  root e.g. /var/www/html/ directory. Then go directly to Step B.
+  
  Thanks!
 
   
