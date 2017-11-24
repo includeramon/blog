@@ -1,5 +1,6 @@
 # blog
 A simple bloging site using CodeIgniter.
+
 Features:
   - login through google sign in api
   - create/edit posts using markdown (http://parsedown.org/)
